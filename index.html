@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100d0a">
+  <meta name="description" content="777 كافيه — قهوة، حلويات، موهيتو وأجواء بلايستيشن. اكتشف المنيو وأجواء المكان.">
+  <title>777 كافيه | قهوة ولعب</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="intro-screen" id="intro-screen" aria-hidden="true">
+    <img class="intro-logo" src="assets/777-logo-source.png" alt="">
+  </div>
+  <div class="page-glow page-glow-one" aria-hidden="true"></div>
+  <div class="page-glow page-glow-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="777 كافيه — الصفحة الرئيسية">
+      <span class="brand-mark">777</span>
+      <span class="brand-name">CAFE</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" aria-label="القائمة الرئيسية">
+      <a href="#home">الرئيسية</a>
+      <a href="#menu">المنيو</a>
+      <a href="gallery.html">معرض الصور</a>
+      <a href="#playstation">بلايستيشن</a>
+      <a href="#visit">زورونا</a>
+    </nav>
+    <a class="header-cta" href="#menu">اكتشف المنيو <span aria-hidden="true">↙</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-shell" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> قهوتك.. لعبتك.. مزاجك</p>
+        <h1>كل الأجواء<br>تبدأ من <span>777</span></h1>
+        <p class="hero-description">قهوة على مزاجك، حلى يكمّل يومك، وجلسة بلايستيشن تجمع الصحاب. أهلاً في مكانك.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#menu">شوف المنيو <span aria-hidden="true">←</span></a>
+          <a class="text-link" href="#playstation">اكتشف أجواء اللعب <span aria-hidden="true">⌁</span></a>
+        </div>
+        <div class="hero-notes" aria-label="مميزات 777">
+          <span><i aria-hidden="true">✦</i> قهوة ومشروبات</span>
+          <span><i aria-hidden="true">✦</i> حلويات طازجة</span>
+          <span><i aria-hidden="true">✦</i> جلسات بلايستيشن</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="hero-logo-wrap">
+          <img class="hero-logo" src="assets/777-logo-source.png" alt="شعار 777 كافيه مع فنجان قهوة ويد تحكم بلايستيشن">
+          <span class="logo-spark spark-one" aria-hidden="true">✦</span>
+          <span class="logo-spark spark-two" aria-hidden="true">✧</span>
+        </div>
+        <div class="floating-note note-top"><span>☕</span> قهوة بتحبّها</div>
+        <div class="floating-note note-bottom"><span>🎮</span> لعب بلا حدود</div>
+        <span class="hero-number" aria-hidden="true">777</span>
+      </div>
+      <a class="scroll-cue" href="#menu"><span></span> انزل واكتشف</a>
+    </section>
+
+    <section class="menu-section section-shell" id="menu">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> اختار اللي على مزاجك</p>
+          <h2>منيو <span>777</span></h2>
+        </div>
+        <p class="section-intro">من أول رشفة قهوة لآخر لقمة حلى — كل اختيار إله مزاجه.</p>
+      </div>
+      <div class="menu-toolbar">
+        <div class="category-tabs" role="tablist" aria-label="تصنيفات المنيو" id="category-tabs"></div>
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" id="menu-search" placeholder="دور على صنف..." aria-label="ابحث في المنيو">
+        </label>
+      </div>
+      <p class="price-note">جميع الأسعار بالشيكل ₪.</p>
+      <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
+      <p class="empty-state" id="empty-state" hidden>ما لقينا صنف بهذا الاسم. جرّب كلمة ثانية.</p>
+    </section>
+
+    <section class="feature-banner section-shell" id="playstation">
+      <div class="feature-visual">
+        <div class="controller-glow" aria-hidden="true"></div>
+        <span class="controller-icon" aria-hidden="true">🎮</span>
+        <span class="feature-sticker">GAME<br>ON</span>
+      </div>
+      <div class="feature-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> مش بس كافيه</p>
+        <h2>القعدة بتحلى<br>مع <span>اللعب</span></h2>
+        <p>جمّع أصحابك، اختار لعبتك، وخلي القهوة علينا تكمل الأجواء. في 777 بتلاقي مساحة للضحك والتحدّي واللحظات الحلوة.</p>
+        <a class="button button-outline" href="#gallery">شوف أجواء 777 <span aria-hidden="true">←</span></a>
+      </div>
+      <div class="feature-side-label" aria-hidden="true">COFFEE · FRIENDS · GAMES</div>
+    </section>
+
+    <section class="gallery-section section-shell" id="gallery">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> لمحة من أجواءنا</p>
+          <h2>صور <span>المكان</span></h2>
+        </div>
+        <p class="section-intro">قهوة، تفاصيل دافئة، وجلسات بتجمع الأحباب.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-card gallery-tall">
+          <img src="assets/gallery/gallery-1.jpg" alt="ساعة حائط على جدار أخضر في الكافيه" loading="lazy">
+          <figcaption><span>1</span> لمسات دافئة</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="assets/gallery/gallery-2.jpg" alt="جلسة لعب داخل الكافيه" loading="lazy">
+          <figcaption><span>2</span> جلسات بلايستيشن</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="assets/gallery/gallery-3.jpg" alt="جلسة لعب قريبة من شاشة التلفاز" loading="lazy">
+          <figcaption><span>3</span> تحدّي والأصدقاء</figcaption>
+        </figure>
+        <figure class="gallery-card gallery-wide">
+          <img src="assets/gallery/gallery-4.jpg" alt="ممر كافيه مع مرآة دائرية واكسسوارات" loading="lazy">
+          <figcaption><span>4</span> هوية 777</figcaption>
+        </figure>
+      </div>
+      <a class="gallery-more" href="gallery.html">افتح معرض الصور <span aria-hidden="true">←</span></a>
+    </section>
+
+    <section class="visit-section section-shell" id="visit">
+      <div class="visit-heading">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> ناطرينك</p>
+        <h2>خلي مزاجك<br><span>على 777</span></h2>
+        <p>قهوة، حلى، ولعب — بنستناك في سرايا!</p>
+      </div>
+      <div class="visit-details">
+        <article class="visit-card">
+          <span class="visit-icon" aria-hidden="true">📍</span>
+          <div>
+            <h3>موقعنا</h3>
+            <p>سرايا، فوق بنك فلسطين<br>الطابق الرابع</p>
+          </div>
+        </article>
+        <article class="visit-card">
+          <span class="visit-icon" aria-hidden="true">◷</span>
+          <div>
+            <h3>مواعيد العمل</h3>
+            <p>يوميًا: 9:30 صباحًا – 12:00 ليلًا<br>الجمعة: 3:30 مساءً – 12:00 ليلًا</p>
+          </div>
+        </article>
+        <article class="visit-card">
+          <span class="visit-icon" aria-hidden="true">☎</span>
+          <div>
+            <h3>للتواصل</h3>
+            <a class="phone-number" href="tel:+972598969860" dir="ltr">+972 59-896-9860</a>
+            <a class="visit-link" href="https://wa.me/972598969860" target="_blank" rel="noopener noreferrer">راسلنا على واتساب <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#home" aria-label="777 كافيه — للأعلى">
+      <span class="brand-mark">777</span><span class="brand-name">CAFE</span>
+    </a>
+    <p>قهوة، حلى، ولعب — كلهم بمكان واحد.</p>
+    <span class="copyright">© 777 كافيه</span>
+  </footer>
+</body>
+</html>
