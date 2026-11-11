@@ -126,29 +126,61 @@ const menuCategories = [
 const categoryTabs = document.querySelector("#category-tabs");
 const menuGrid = document.querySelector("#menu-grid");
 const searchInput = document.querySelector("#menu-search");
+const searchClear = document.querySelector("#menu-search-clear");
+const resultCount = document.querySelector("#menu-result-count");
 const emptyState = document.querySelector("#empty-state");
-let activeCategory = "الكل";
+const menuReset = document.querySelector("#menu-reset");
+let activeCategory = "كل الأصناف";
 
-function createCategoryTab(name) {
+const categoryDescriptions = {
+  "مشروبات ساخنة": "اختار مشروبك المفضل من قائمة المشروبات الساخنة.",
+  "آيس كافي": "قهوة باردة بطعمك المفضل.",
+  "موهيتو كلاسيك": "موهيتو بارد بالنكهة اللي بتحبها.",
+  "موهيتو طاقة": "موهيتو بارد من تشكيلة مشروبات الطاقة.",
+  "ميلك شيك": "ميلك شيك بارد بالنكهة اللي بتختارها.",
+  "عصائر طبيعية": "اختار عصيرك المفضل من تشكيلتنا.",
+  "حلويات ساخنة": "حلى دافئ يكمّل قهوتك.",
+  "حلويات باردة": "حلى بارد من اختيارات 777.",
+  "خلطة 777": "خلطة مميزة من اختيارات 777."
+};
+
+function createCategoryTab(name, icon, count) {
   const button = document.createElement("button");
   button.className = `category-tab${name === activeCategory ? " active" : ""}`;
   button.type = "button";
-  button.setAttribute("role", "tab");
-  button.setAttribute("aria-selected", String(name === activeCategory));
-  button.textContent = name;
-  button.addEventListener("click", () => {
-    activeCategory = name;
-    renderTabs();
-    renderMenu();
-  });
+  button.dataset.category = name;
+  button.setAttribute("aria-pressed", String(name === activeCategory));
+
+  const categoryIcon = document.createElement("span");
+  categoryIcon.className = "category-tab-icon";
+  categoryIcon.setAttribute("aria-hidden", "true");
+  categoryIcon.textContent = icon;
+
+  const label = document.createElement("span");
+  label.textContent = name;
+
+  const itemCount = document.createElement("span");
+  itemCount.className = "category-tab-count";
+  itemCount.textContent = new Intl.NumberFormat("ar").format(count);
+
+  button.append(categoryIcon, label, itemCount);
   return button;
 }
 
 function renderTabs() {
+  const totalItems = menuCategories.reduce((total, category) => total + category.items.length, 0);
   categoryTabs.replaceChildren(
-    createCategoryTab("الكل"),
-    ...menuCategories.map(({ name }) => createCategoryTab(name))
+    createCategoryTab("كل الأصناف", "✦", totalItems),
+    ...menuCategories.map(({ name, icon, items }) => createCategoryTab(name, icon, items.length))
   );
+}
+
+function updateCategoryTabs() {
+  for (const button of categoryTabs.querySelectorAll("[data-category]")) {
+    const isActive = button.dataset.category === activeCategory;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  }
 }
 
 function matchesSearch(text, query) {
@@ -158,7 +190,7 @@ function matchesSearch(text, query) {
 function renderMenu() {
   const query = searchInput.value.trim();
   const categories = menuCategories
-    .filter(({ name }) => activeCategory === "الكل" || activeCategory === name)
+    .filter(({ name }) => activeCategory === "كل الأصناف" || activeCategory === name)
     .map((category) => ({
       ...category,
       items: category.items.filter((item) =>
@@ -166,12 +198,14 @@ function renderMenu() {
       )
     }))
     .filter(({ items }) => items.length > 0);
+  const visibleItems = categories.reduce((total, category) => total + category.items.length, 0);
+  resultCount.textContent = `عدد الأصناف: ${new Intl.NumberFormat("ar").format(visibleItems)}`;
+  searchClear.hidden = query.length === 0;
 
   menuGrid.replaceChildren(...categories.map((category, index) => {
-    const card = document.createElement("article");
-    card.className = "menu-card";
-    card.style.animationDelay = `${Math.min(index * 45, 270)}ms`;
-
+    const section = document.createElement("section");
+    section.className = "menu-category-section";
+    section.style.animationDelay = `${Math.min(index * 45, 270)}ms`;
     const heading = document.createElement("div");
     heading.className = "menu-card-head";
 
@@ -181,31 +215,76 @@ function renderMenu() {
     icon.className = "menu-card-icon";
     icon.setAttribute("aria-hidden", "true");
     icon.textContent = category.icon;
-    heading.append(title, icon);
+    const count = document.createElement("span");
+    count.className = "menu-card-count";
+    count.textContent = `${new Intl.NumberFormat("ar").format(category.items.length)} صنف`;
+    heading.append(title, count, icon);
 
     const list = document.createElement("div");
     list.className = "menu-items";
-    for (const item of category.items) {
-      const row = document.createElement("div");
-      row.className = "menu-item";
+    for (const [itemIndex, item] of category.items.entries()) {
+      const card = document.createElement("article");
+      card.className = "menu-item-card";
+
+      const image = document.createElement("div");
+      image.className = `menu-product-image menu-product-image-${index % 5}`;
+      image.setAttribute("aria-hidden", "true");
+      const imageIcon = document.createElement("span");
+      imageIcon.className = "menu-product-icon";
+      imageIcon.textContent = category.icon;
+      const imageCaption = document.createElement("span");
+      imageCaption.className = "menu-product-image-caption";
+      imageCaption.textContent = "صورة الصنف";
+      image.append(imageIcon, imageCaption);
+
+      const details = document.createElement("div");
+      details.className = "menu-item-details";
+      const meta = document.createElement("div");
+      meta.className = "menu-item-meta";
       const name = document.createElement("span");
       name.className = "menu-item-name";
       name.textContent = item.name;
       const price = document.createElement("span");
       price.className = `menu-item-price${item.noPrice ? " no-price" : ""}`;
       price.textContent = item.noPrice ? item.price : `${item.price} ₪`;
-      row.append(name, price);
-      list.append(row);
+      meta.append(name, price);
+
+      const description = document.createElement("p");
+      description.className = "menu-item-description";
+      description.textContent = item.description || categoryDescriptions[category.name];
+      details.append(meta, description);
+      card.append(image, details);
+      card.style.animationDelay = `${Math.min(itemIndex * 25, 200)}ms`;
+      list.append(card);
     }
 
-    card.append(heading, list);
-    return card;
+    section.append(heading, list);
+    return section;
   }));
   emptyState.hidden = categories.length > 0;
 }
 
-if (categoryTabs && menuGrid && searchInput && emptyState) {
+if (categoryTabs && menuGrid && searchInput && searchClear && resultCount && emptyState && menuReset) {
+  categoryTabs.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-category]");
+    if (!button) return;
+    activeCategory = button.dataset.category;
+    updateCategoryTabs();
+    renderMenu();
+  });
   searchInput.addEventListener("input", renderMenu);
+  searchClear.addEventListener("click", () => {
+    searchInput.value = "";
+    renderMenu();
+    searchInput.focus();
+  });
+  menuReset.addEventListener("click", () => {
+    activeCategory = "كل الأصناف";
+    searchInput.value = "";
+    updateCategoryTabs();
+    renderMenu();
+    searchInput.focus();
+  });
   renderTabs();
   renderMenu();
 }
