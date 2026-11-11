@@ -172,5 +172,14 @@
     <p>قهوة، حلى، ولعب — كلهم بمكان واحد.</p>
     <span class="copyright">© 777 كافيه</span>
   </footer>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log('ميزة العمل بدون إنترنت مفعّلة بنجاح!'))
+        .catch((err) => console.log('خطأ في تفعيل الميزة:', err));
+    });
+  }
+</script>
 </body>
 </html>
