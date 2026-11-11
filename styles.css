@@ -495,3 +495,13 @@ h2 { margin-bottom: 0; font-size: clamp(30px, 4vw, 46px); line-height: 1.4; font
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* إخفاء شعار منصة الاستضافة */
+footer a[href*="netlify"], 
+div:has(> a[href*="netlify"]),
+a[href*="netlify"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
