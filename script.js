@@ -51,12 +51,12 @@ const menuCategories = [
     name: "موهيتو طاقة",
     icon: "⚡",
     items: [
-      { name: "موهيتو طاقة فلورا", price: "20", image: "assets/menu/mojito-energy-flora.png" },
-      { name: "موهيتو طاقة حمضيات", price: "20", image: "assets/menu/mojito-energy-new.png" },
-      { name: "موهيتو طاقة أناناس", price: "20", image: "assets/menu/mojito-energy-new.png" },
-      { name: "موهيتو طاقة كراميل", price: "20", image: "assets/menu/mojito-energy-new.png" },
-      { name: "موهيتو طاقة بلو بري", price: "20", image: "assets/menu/mojito-energy-new.png" },
-      { name: "موهيتو طاقة — نكهات أخرى", price: "20", image: "assets/menu/mojito-energy-new.png" }
+      { name: "موهيتو طاقة فلورا", price: "25", image: "assets/menu/mojito-energy-flora.png" },
+      { name: "موهيتو طاقة حمضيات", price: "25", image: "assets/menu/mojito-energy-new.png" },
+      { name: "موهيتو طاقة أناناس", price: "25", image: "assets/menu/mojito-energy-new.png" },
+      { name: "موهيتو طاقة كراميل", price: "25", image: "assets/menu/mojito-energy-new.png" },
+      { name: "موهيتو طاقة بلو بري", price: "25", image: "assets/menu/mojito-energy-new.png" },
+      { name: "موهيتو طاقة — نكهات أخرى", price: "25", image: "assets/menu/mojito-energy-new.png" }
     ]
   },
   {
@@ -95,7 +95,7 @@ const menuCategories = [
       { name: "فوتتشيني كريب", price: "30", image: "assets/menu/dessert-fettuccine-crepe.png" },
       { name: "بان كيك", price: "25", image: "assets/menu/dessert-pancake.png" },
       { name: "ميني بان كيك", price: "23", image: "assets/menu/dessert-mini-pancake.png" },
-      { name: "براونيز", price: "15", image: "assets/menu/dessert-brownies.png" },
+      { name: "براونيز", price: "25", image: "assets/menu/dessert-brownies.png" },
       { name: "وافل أمريكي", price: "30", image: "assets/menu/dessert-american-waffle.png" }
     ]
   },
@@ -111,7 +111,7 @@ const menuCategories = [
       { name: "كنافة نوتيلا", price: "27", image: "assets/menu/kunafa-nutella.png" },
       { name: "سان سبستيان", price: "30", image: "assets/menu/san-sebastian.png" },
       { name: "ديور", price: "35", image: "assets/menu/dior-cake.png" },
-      { name: "لايت بنانا — Lite Banana", price: "26", image: "assets/menu/light-banana.png" }
+      { name: "لايت بنانا — Lite Banana", price: "30", image: "assets/menu/light-banana.png" }
     ]
   },
   {
@@ -131,18 +131,6 @@ const resultCount = document.querySelector("#menu-result-count");
 const emptyState = document.querySelector("#empty-state");
 const menuReset = document.querySelector("#menu-reset");
 let activeCategory = "كل الأصناف";
-
-const categoryDescriptions = {
-  "مشروبات ساخنة": "اختار مشروبك المفضل من قائمة المشروبات الساخنة.",
-  "آيس كافي": "قهوة باردة بطعمك المفضل.",
-  "موهيتو كلاسيك": "موهيتو بارد بالنكهة اللي بتحبها.",
-  "موهيتو طاقة": "موهيتو بارد من تشكيلة مشروبات الطاقة.",
-  "ميلك شيك": "ميلك شيك بارد بالنكهة اللي بتختارها.",
-  "عصائر طبيعية": "اختار عصيرك المفضل من تشكيلتنا.",
-  "حلويات ساخنة": "حلى دافئ يكمّل قهوتك.",
-  "حلويات باردة": "حلى بارد من اختيارات 777.",
-  "خلطة 777": "خلطة مميزة من اختيارات 777."
-};
 
 function createCategoryTab(name, icon, count) {
   const button = document.createElement("button");
@@ -257,10 +245,7 @@ function renderMenu() {
       price.textContent = item.noPrice ? item.price : `${item.price} ₪`;
       meta.append(name, price);
 
-      const description = document.createElement("p");
-      description.className = "menu-item-description";
-      description.textContent = item.description || categoryDescriptions[category.name];
-      details.append(meta, description);
+      details.append(meta);
       card.append(image, details);
       card.style.animationDelay = `${Math.min(itemIndex * 25, 200)}ms`;
       list.append(card);
