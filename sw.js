@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cafe777-cache-v1';
+const CACHE_NAME = 'cafe777-cache-v2';
 const assetsToCache = [
   './',
   './index.html',
@@ -13,7 +13,17 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(assetsToCache);
-    })
+    }).then(() => self.skipWaiting())
+  );
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => Promise.all(
+      cacheNames
+        .filter((cacheName) => cacheName.startsWith('cafe777-cache-') && cacheName !== CACHE_NAME)
+        .map((cacheName) => caches.delete(cacheName))
+    )).then(() => self.clients.claim())
   );
 });
 
