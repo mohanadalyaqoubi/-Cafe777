@@ -230,9 +230,10 @@ function renderMenu() {
       if (item.image) {
         image = document.createElement("img");
         image.className = "menu-product-image menu-product-photo";
-        image.src = item.image;
+        image.src = item.image.replace(/\.png$/i, ".jpg");
         image.alt = item.name;
-        image.loading = "lazy";
+        image.loading = "eager";
+        image.decoding = "async";
         if (item.imagePosition) image.style.objectPosition = item.imagePosition;
       } else {
         image = document.createElement("div");
