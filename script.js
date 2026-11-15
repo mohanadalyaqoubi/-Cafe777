@@ -132,6 +132,18 @@ const emptyState = document.querySelector("#empty-state");
 const menuReset = document.querySelector("#menu-reset");
 let activeCategory = "كل الأصناف";
 
+const categoryDescriptions = {
+  "مشروبات ساخنة": "اختار مشروبك المفضل من قائمة المشروبات الساخنة.",
+  "آيس كافي": "قهوة باردة بطعمك المفضل.",
+  "موهيتو كلاسيك": "موهيتو بارد بالنكهة اللي بتحبها.",
+  "موهيتو طاقة": "موهيتو بارد من تشكيلة مشروبات الطاقة.",
+  "ميلك شيك": "ميلك شيك بارد بالنكهة اللي بتختارها.",
+  "عصائر طبيعية": "اختار عصيرك المفضل من تشكيلتنا.",
+  "حلويات ساخنة": "حلى دافئ يكمّل قهوتك.",
+  "حلويات باردة": "حلى بارد من اختيارات 777.",
+  "خلطة 777": "خلطة مميزة من اختيارات 777."
+};
+
 function createCategoryTab(name, icon, count) {
   const button = document.createElement("button");
   button.className = `category-tab${name === activeCategory ? " active" : ""}`;
@@ -244,7 +256,10 @@ function renderMenu() {
       price.textContent = item.noPrice ? item.price : `${item.price} ₪`;
       meta.append(name, price);
 
-      details.append(meta);
+      const description = document.createElement("p");
+      description.className = "menu-item-description";
+      description.textContent = item.description || categoryDescriptions[category.name];
+      details.append(meta, description);
       card.append(image, details);
       card.style.animationDelay = `${Math.min(itemIndex * 25, 200)}ms`;
       list.append(card);
