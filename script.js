@@ -3,115 +3,115 @@ const menuCategories = [
     name: "مشروبات ساخنة",
     icon: "☕",
     items: [
-      { name: "شاي", price: "8" },
-      { name: "قهوة — صغير", price: "10" },
-      { name: "قهوة — كبير", price: "12" },
-      { name: "نسكافيه", price: "12" },
-      { name: "نسكافيه بالحليب", price: "15" },
-      { name: "إسبريسو — صغير", price: "12" },
-      { name: "إسبريسو — كبير", price: "15" },
-      { name: "كابتشينو", price: "18" },
-      { name: "كافي لاتيه", price: "20" },
-      { name: "كافي نوتيلا", price: "22" },
-      { name: "سبانش لاتيه", price: "22" },
-      { name: "فلات وايت", price: "22" },
-      { name: "زهورات", price: "8" },
-      { name: "سحلب", price: "15" },
-      { name: "هوت نوتيلا", price: "20" },
-      { name: "هوت لوتس", price: "22" },
-      { name: "ميكاتو", price: "15" },
-      { name: "أمريكانو", price: "15" }
+      { name: "شاي", price: "8", image: "assets/menu/tea.png" },
+      { name: "قهوة — صغير", price: "10", image: "assets/menu/coffee-small.png" },
+      { name: "قهوة — كبير", price: "12", image: "assets/menu/coffee.png" },
+      { name: "نسكافيه", price: "12", image: "assets/menu/nescafe.png" },
+      { name: "نسكافيه بالحليب", price: "15", image: "assets/menu/nescafe-milk.png" },
+      { name: "قهوة إسبريسو — صغير", price: "12", image: "assets/menu/espresso-small.png" },
+      { name: "قهوة إسبريسو — كبير", price: "15", image: "assets/menu/espresso-large.png" },
+      { name: "كابتشينو", price: "18", image: "assets/menu/cappuccino.png" },
+      { name: "كافي لاتيه", price: "20", image: "assets/menu/cafe-latte-new.png" },
+      { name: "كافي نوتيلا", price: "22", image: "assets/menu/cafe-nutella.png" },
+      { name: "سبانش لاتيه", price: "22", image: "assets/menu/hot-spanish-latte.png" },
+      { name: "فلات وايت", price: "22", image: "assets/menu/flat-white.png" },
+      { name: "زهورات", price: "8", image: "assets/menu/herbal-tea-new.png" },
+      { name: "سحلب", price: "15", image: "assets/menu/sahlab.png" },
+      { name: "هوت نوتيلا", price: "20", image: "assets/menu/hot-nutella.png" },
+      { name: "هوت لوتس", price: "22", image: "assets/menu/hot-lotus.png" },
+      { name: "ميكاتو", price: "15", image: "assets/menu/macchiato.png" },
+      { name: "أمريكانو", price: "15", image: "assets/menu/americano.png", imagePosition: "68% center" }
     ]
   },
   {
     name: "آيس كافي",
     icon: "🧊",
     items: [
-      { name: "آيس لاتيه", price: "22" },
-      { name: "آيس سبانش لاتيه", price: "25" },
-      { name: "آيس نوتيلا", price: "25" },
-      { name: "آيس كراميل لاتيه", price: "25" },
-      { name: "آيس كراميل ميكاتو", price: "23" },
-      { name: "آيس أمريكانو", price: "16" }
+      { name: "آيس لاتيه", price: "22", image: "assets/menu/iced-latte.png" },
+      { name: "آيس سبانش لاتيه", price: "25", image: "assets/menu/iced-spanish-latte.png" },
+      { name: "آيس نوتيلا", price: "25", image: "assets/menu/iced-nutella.png" },
+      { name: "آيس كراميل لاتيه", price: "25", image: "assets/menu/iced-caramel-latte.png" },
+      { name: "آيس كراميل ميكاتو", price: "23", image: "assets/menu/iced-caramel-macchiato.png" },
+      { name: "آيس أمريكانو", price: "16", image: "assets/menu/iced-americano.png" }
     ]
   },
   {
     name: "موهيتو كلاسيك",
     icon: "🍋",
     items: [
-      { name: "موهيتو فلورا", price: "20" },
-      { name: "موهيتو حمضيات", price: "20" },
-      { name: "موهيتو أناناس", price: "20" },
-      { name: "موهيتو كراميل", price: "20" },
-      { name: "موهيتو بلو بري", price: "20" },
-      { name: "نكهات أخرى", price: "20" }
+      { name: "موهيتو فلورا", price: "20", image: "assets/menu/mojito-flora.png" },
+      { name: "موهيتو حمضيات", price: "20", image: "assets/menu/mojito-citrus.png" },
+      { name: "موهيتو أناناس", price: "20", image: "assets/menu/mojito-pineapple.png" },
+      { name: "موهيتو كراميل", price: "20", image: "assets/menu/mojito-caramel.png" },
+      { name: "موهيتو بلو بري", price: "20", image: "assets/menu/mojito-blueberry.png" },
+      { name: "نكهات أخرى", price: "20", image: "assets/menu/mojito-classic-new.png" }
     ]
   },
   {
     name: "موهيتو طاقة",
     icon: "⚡",
     items: [
-      { name: "موهيتو طاقة فلورا", price: "20" },
-      { name: "موهيتو طاقة حمضيات", price: "20" },
-      { name: "موهيتو طاقة أناناس", price: "20" },
-      { name: "موهيتو طاقة كراميل", price: "20" },
-      { name: "موهيتو طاقة بلو بري", price: "20" },
-      { name: "موهيتو طاقة — نكهات أخرى", price: "20" }
+      { name: "موهيتو طاقة فلورا", price: "20", image: "assets/menu/mojito-energy-flora.png" },
+      { name: "موهيتو طاقة حمضيات", price: "20", image: "assets/menu/mojito-energy-new.png" },
+      { name: "موهيتو طاقة أناناس", price: "20", image: "assets/menu/mojito-energy-new.png" },
+      { name: "موهيتو طاقة كراميل", price: "20", image: "assets/menu/mojito-energy-new.png" },
+      { name: "موهيتو طاقة بلو بري", price: "20", image: "assets/menu/mojito-energy-new.png" },
+      { name: "موهيتو طاقة — نكهات أخرى", price: "20", image: "assets/menu/mojito-energy-new.png" }
     ]
   },
   {
     name: "ميلك شيك",
     icon: "🥤",
     items: [
-      { name: "فانيلا", price: "20" },
-      { name: "شوكولاتة", price: "20" },
-      { name: "نوتيلا", price: "25" },
-      { name: "لوتس", price: "25" },
-      { name: "بستاشيو", price: "25" },
-      { name: "آيس كافي بوظة", price: "25" },
-      { name: "كراميل", price: "25" },
-      { name: "نسكافيه", price: "25" },
-      { name: "كندر", price: "25" },
-      { name: "سنكرز", price: "25" },
-      { name: "جالكسي", price: "25" },
-      { name: "مارس", price: "25" }
+      { name: "فانيلا", price: "20", image: "assets/menu/milkshake-vanilla.png" },
+      { name: "شوكولاتة", price: "20", image: "assets/menu/milkshake-chocolate.png" },
+      { name: "نوتيلا", price: "25", image: "assets/menu/milkshake-nutella.png" },
+      { name: "لوتس", price: "25", image: "assets/menu/milkshake-lotus.png" },
+      { name: "بستاشيو", price: "25", image: "assets/menu/milkshake-pistachio.png" },
+      { name: "آيس كوفي بوظة", price: "25", image: "assets/menu/iced-coffee.png" },
+      { name: "كراميل", price: "25", image: "assets/menu/iced-caramel-coffee-icecream.png" },
+      { name: "نسكافيه", price: "25", image: "assets/menu/iced-coffee-nescafe-icecream.png" },
+      { name: "كندر", price: "25", image: "assets/menu/iced-coffee-kinder-icecream.png" },
+      { name: "سنكرز", price: "25", image: "assets/menu/iced-coffee-snickers-icecream.png" },
+      { name: "جالكسي", price: "25", image: "assets/menu/iced-coffee-galaxy-icecream.png" },
+      { name: "مارس", price: "25", image: "assets/menu/iced-coffee-mars-icecream.png" }
     ]
   },
   {
     name: "عصائر طبيعية",
     icon: "🍓",
     items: [
-      { name: "ليمون ونعنع", price: "20" },
-      { name: "موز وحليب", price: "22" },
-      { name: "موسمي", price: "22" },
-      { name: "أفوكادو عسل ومكسرات", price: "25" }
+      { name: "ليمون ونعنع", price: "20", image: "assets/menu/juice-lemon-mint.png" },
+      { name: "موز وحليب", price: "22", image: "assets/menu/juice-banana-milk.png" },
+      { name: "موسمي", price: "22", image: "assets/menu/juice-seasonal.png" },
+      { name: "أفوكادو عسل ومكسرات", price: "25", image: "assets/menu/juice-avocado-honey-nuts.png" }
     ]
   },
   {
     name: "حلويات ساخنة",
     icon: "🥞",
     items: [
-      { name: "كريب", price: "25" },
-      { name: "فوتتشيني كريب", price: "30" },
-      { name: "بان كيك", price: "25" },
-      { name: "ميني بان كيك", price: "23" },
-      { name: "براونيز", price: "15" },
-      { name: "وافل أمريكي", price: "30" }
+      { name: "كريب", price: "25", image: "assets/menu/dessert-crepe.png" },
+      { name: "فوتتشيني كريب", price: "30", image: "assets/menu/dessert-fettuccine-crepe.png" },
+      { name: "بان كيك", price: "25", image: "assets/menu/dessert-pancake.png" },
+      { name: "ميني بان كيك", price: "23", image: "assets/menu/dessert-mini-pancake.png" },
+      { name: "براونيز", price: "15", image: "assets/menu/dessert-brownies.png" },
+      { name: "وافل أمريكي", price: "30", image: "assets/menu/dessert-american-waffle.png" }
     ]
   },
   {
     name: "حلويات باردة",
     icon: "🍰",
     items: [
-      { name: "تشيز كيك بلوبري", price: "20" },
-      { name: "تشيز كيك نوتيلا", price: "23" },
-      { name: "لوتس", price: "23" },
-      { name: "بيستاشيو", price: "25" },
-      { name: "موس نوتيلا", price: "25" },
-      { name: "كنافة نوتيلا", price: "27" },
-      { name: "سان سبستيان", price: "30" },
-      { name: "ديور", price: "35" },
-      { name: "لايت بنانا — Lite Banana", price: "26" }
+      { name: "تشيز كيك بلوبري", price: "20", image: "assets/menu/cheesecake-blueberry.png" },
+      { name: "تشيز كيك نوتيلا", price: "23", image: "assets/menu/cheesecake-nutella.png" },
+      { name: "لوتس", price: "23", image: "assets/menu/cheesecake-lotus.png" },
+      { name: "بيستاشيو", price: "25", image: "assets/menu/cheesecake-pistachio.png" },
+      { name: "موس نوتيلا", price: "25", image: "assets/menu/mousse-cake.png" },
+      { name: "كنافة نوتيلا", price: "27", image: "assets/menu/kunafa-nutella.png" },
+      { name: "سان سبستيان", price: "30", image: "assets/menu/san-sebastian.png" },
+      { name: "ديور", price: "35", image: "assets/menu/dior-cake.png" },
+      { name: "لايت بنانا — Lite Banana", price: "26", image: "assets/menu/light-banana.png" }
     ]
   },
   {
@@ -126,29 +126,49 @@ const menuCategories = [
 const categoryTabs = document.querySelector("#category-tabs");
 const menuGrid = document.querySelector("#menu-grid");
 const searchInput = document.querySelector("#menu-search");
+const searchClear = document.querySelector("#menu-search-clear");
+const resultCount = document.querySelector("#menu-result-count");
 const emptyState = document.querySelector("#empty-state");
-let activeCategory = "الكل";
+const menuReset = document.querySelector("#menu-reset");
+let activeCategory = "كل الأصناف";
 
-function createCategoryTab(name) {
+function createCategoryTab(name, icon, count) {
   const button = document.createElement("button");
   button.className = `category-tab${name === activeCategory ? " active" : ""}`;
   button.type = "button";
-  button.setAttribute("role", "tab");
-  button.setAttribute("aria-selected", String(name === activeCategory));
-  button.textContent = name;
-  button.addEventListener("click", () => {
-    activeCategory = name;
-    renderTabs();
-    renderMenu();
-  });
+  button.dataset.category = name;
+  button.setAttribute("aria-pressed", String(name === activeCategory));
+
+  const categoryIcon = document.createElement("span");
+  categoryIcon.className = "category-tab-icon";
+  categoryIcon.setAttribute("aria-hidden", "true");
+  categoryIcon.textContent = icon;
+
+  const label = document.createElement("span");
+  label.textContent = name;
+
+  const itemCount = document.createElement("span");
+  itemCount.className = "category-tab-count";
+  itemCount.textContent = new Intl.NumberFormat("ar").format(count);
+
+  button.append(categoryIcon, label, itemCount);
   return button;
 }
 
 function renderTabs() {
+  const totalItems = menuCategories.reduce((total, category) => total + category.items.length, 0);
   categoryTabs.replaceChildren(
-    createCategoryTab("الكل"),
-    ...menuCategories.map(({ name }) => createCategoryTab(name))
+    createCategoryTab("كل الأصناف", "✦", totalItems),
+    ...menuCategories.map(({ name, icon, items }) => createCategoryTab(name, icon, items.length))
   );
+}
+
+function updateCategoryTabs() {
+  for (const button of categoryTabs.querySelectorAll("[data-category]")) {
+    const isActive = button.dataset.category === activeCategory;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  }
 }
 
 function matchesSearch(text, query) {
@@ -158,7 +178,7 @@ function matchesSearch(text, query) {
 function renderMenu() {
   const query = searchInput.value.trim();
   const categories = menuCategories
-    .filter(({ name }) => activeCategory === "الكل" || activeCategory === name)
+    .filter(({ name }) => activeCategory === "كل الأصناف" || activeCategory === name)
     .map((category) => ({
       ...category,
       items: category.items.filter((item) =>
@@ -166,12 +186,14 @@ function renderMenu() {
       )
     }))
     .filter(({ items }) => items.length > 0);
+  const visibleItems = categories.reduce((total, category) => total + category.items.length, 0);
+  resultCount.textContent = `عدد الأصناف: ${new Intl.NumberFormat("ar").format(visibleItems)}`;
+  searchClear.hidden = query.length === 0;
 
   menuGrid.replaceChildren(...categories.map((category, index) => {
-    const card = document.createElement("article");
-    card.className = "menu-card";
-    card.style.animationDelay = `${Math.min(index * 45, 270)}ms`;
-
+    const section = document.createElement("section");
+    section.className = "menu-category-section";
+    section.style.animationDelay = `${Math.min(index * 45, 270)}ms`;
     const heading = document.createElement("div");
     heading.className = "menu-card-head";
 
@@ -181,31 +203,80 @@ function renderMenu() {
     icon.className = "menu-card-icon";
     icon.setAttribute("aria-hidden", "true");
     icon.textContent = category.icon;
-    heading.append(title, icon);
+    const count = document.createElement("span");
+    count.className = "menu-card-count";
+    count.textContent = `${new Intl.NumberFormat("ar").format(category.items.length)} صنف`;
+    heading.append(title, count, icon);
 
     const list = document.createElement("div");
     list.className = "menu-items";
-    for (const item of category.items) {
-      const row = document.createElement("div");
-      row.className = "menu-item";
+    for (const [itemIndex, item] of category.items.entries()) {
+      const card = document.createElement("article");
+      card.className = "menu-item-card";
+
+      let image;
+      if (item.image) {
+        image = document.createElement("img");
+        image.className = "menu-product-image menu-product-photo";
+        image.src = item.image;
+        image.alt = item.name;
+        image.loading = "lazy";
+        if (item.imagePosition) image.style.objectPosition = item.imagePosition;
+      } else {
+        image = document.createElement("div");
+        image.className = `menu-product-image menu-product-image-${index % 5}`;
+        image.setAttribute("aria-hidden", "true");
+        const imageIcon = document.createElement("span");
+        imageIcon.className = "menu-product-icon";
+        imageIcon.textContent = category.icon;
+        image.append(imageIcon);
+      }
+
+      const details = document.createElement("div");
+      details.className = "menu-item-details";
+      const meta = document.createElement("div");
+      meta.className = "menu-item-meta";
       const name = document.createElement("span");
       name.className = "menu-item-name";
       name.textContent = item.name;
       const price = document.createElement("span");
       price.className = `menu-item-price${item.noPrice ? " no-price" : ""}`;
       price.textContent = item.noPrice ? item.price : `${item.price} ₪`;
-      row.append(name, price);
-      list.append(row);
+      meta.append(name, price);
+
+      details.append(meta);
+      card.append(image, details);
+      card.style.animationDelay = `${Math.min(itemIndex * 25, 200)}ms`;
+      list.append(card);
     }
 
-    card.append(heading, list);
-    return card;
+    section.append(heading, list);
+    return section;
   }));
   emptyState.hidden = categories.length > 0;
 }
 
-if (categoryTabs && menuGrid && searchInput && emptyState) {
+if (categoryTabs && menuGrid && searchInput && searchClear && resultCount && emptyState && menuReset) {
+  categoryTabs.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-category]");
+    if (!button) return;
+    activeCategory = button.dataset.category;
+    updateCategoryTabs();
+    renderMenu();
+  });
   searchInput.addEventListener("input", renderMenu);
+  searchClear.addEventListener("click", () => {
+    searchInput.value = "";
+    renderMenu();
+    searchInput.focus();
+  });
+  menuReset.addEventListener("click", () => {
+    activeCategory = "كل الأصناف";
+    searchInput.value = "";
+    updateCategoryTabs();
+    renderMenu();
+    searchInput.focus();
+  });
   renderTabs();
   renderMenu();
 }
