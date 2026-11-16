@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cafe777-cache-v5';
+const CACHE_NAME = 'cafe777-cache-v6';
 const assetsToCache = [
   './',
   './index.html',

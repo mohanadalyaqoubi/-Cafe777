@@ -111,7 +111,7 @@ const menuCategories = [
       { name: "كنافة نوتيلا", price: "27", image: "assets/menu/kunafa-nutella.png" },
       { name: "سان سبستيان", price: "30", image: "assets/menu/san-sebastian.png" },
       { name: "ديور", price: "35", image: "assets/menu/dior-cake.png" },
-      { name: "لايت بنانا — Lite Banana", price: "30", image: "assets/menu/light-banana.png" }
+      { name: "لايت كيك — Light Cake", price: "30", image: "assets/menu/light-banana.png" }
     ]
   },
   {
