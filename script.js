@@ -39,12 +39,12 @@ const menuCategories = [
     name: "موهيتو كلاسيك",
     icon: "🍋",
     items: [
-      { name: "موهيتو فلورا", price: "20", image: "assets/menu/mojito-flora.png" },
-      { name: "موهيتو حمضيات", price: "20", image: "assets/menu/mojito-citrus.png" },
-      { name: "موهيتو أناناس", price: "20", image: "assets/menu/mojito-pineapple.png" },
-      { name: "موهيتو كراميل", price: "20", image: "assets/menu/mojito-caramel.png" },
-      { name: "موهيتو بلو بري", price: "20", image: "assets/menu/mojito-blueberry.png" },
-      { name: "نكهات أخرى", price: "20", image: "assets/menu/mojito-classic-new.png" }
+      { name: "موهيتو فلورا", price: "25", image: "assets/menu/mojito-flora.png" },
+      { name: "موهيتو حمضيات", price: "25", image: "assets/menu/mojito-citrus.png" },
+      { name: "موهيتو أناناس", price: "25", image: "assets/menu/mojito-pineapple.png" },
+      { name: "موهيتو كراميل", price: "25", image: "assets/menu/mojito-caramel.png" },
+      { name: "موهيتو بلو بري", price: "25", image: "assets/menu/mojito-blueberry.png" },
+      { name: "نكهات أخرى", price: "25", image: "assets/menu/mojito-classic-new.png" }
     ]
   },
   {
